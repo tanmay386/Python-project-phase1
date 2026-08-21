@@ -1,12 +1,11 @@
-Initial Repository Setup
-README.md: Write a clear overview of the project, including its purpose, how to install dependencies, and how to execute the main Python script.
-requirements.txt: List any necessary Python libraries (like pandas or prettytable) so others can easily recreate your environment.
-.gitignore: Include this file to ensure unnecessary items, such as __pycache__ folders or local virtual environment files, are not pushed to your repository.
-Core Functional Modules
-Daily Recording Module: Build a command-line interface (CLI) or script that prompts the user to input the date, student ID, and attendance status (Present/Absent).
-Calculation & Defaulter Logic: Create functions that tally total working days versus days attended to identify students falling below a specific minimum attendance threshold (e.g., 75%).
-Report Generation: Write a feature that outputs formatted, easy-to-read summaries of the attendance records, ideally exporting them as cleanly formatted text or CSV files.
-Data Management Approach
-File Handling Route: If you want to keep it simple, structure your program to read and write data directly to CSV or JSON files.
-Database Route: For a more robust solution, implement SQLite (which comes built-in with Python) to store relational data using distinct tables for "Students" and "Attendance Logs."
-Data Validation: Whichever storage method you choose, write logic to prevent duplicate attendance entries for the same student on the same day.
+Project Overview: Phase 1 - Student Attendance Tracker
+​1. Problem Statement & Objective
+​The Problem: Manually tracking daily attendance across multiple classes is tedious and prone to human error. It is also time-consuming to manually calculate percentages and cross-reference them to find students who fall below the required attendance threshold.
+​The Objective: Develop an automated, Python-based attendance management system that records daily attendance, calculates overall percentages, automatically identifies defaulters, and generates comprehensive reports using either file handling or a database.
+​2. Core Algorithm & Pseudocode
+​Step 1 - Initialization: Set up a database or file structure to store student profiles (e.g., Roll Number, Name, Total Classes Conducted, Total Classes Attended).
+​Step 2 - Record Daily Attendance: Create an input mechanism to mark students as Present or Absent for the day. Update the "Total Classes Conducted" and "Total Classes Attended" counters accordingly for each student.
+​Step 3 - Calculate Percentages: For each student, apply the formula:
+(Total Classes Attended / Total Classes Conducted) * 100
+​Step 4 - Identify Defaulters: Check the calculated percentage against a predefined minimum threshold (e.g., 75%). If the percentage is lower, flag the student's ID and Name as a defaulter.
+​Step 5 - Generate Reports: Compile the attendance records, percentages, and the separated defaulters list, then export this data into a formatted report (e.g., a .txt or .csv file).
